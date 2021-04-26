@@ -52,5 +52,7 @@ Immediate to-do
 * Add hints for certain motions, as the elbows right now are fucked up
 * Settings tab could be a help tab
 * The directions need to be represented with two letters
-* Display points for the the places
+* Display points for the places
 * Possibly add more IK constraints
+* Document Handshape
+* Add check to make replaying an animation more efficient (same input or not)
