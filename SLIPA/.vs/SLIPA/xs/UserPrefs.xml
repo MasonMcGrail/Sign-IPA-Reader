@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{D08E7D50-2AE1-1582-54C2-39CAB83F521A}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Character Models/Animations/FingerMover.cs">
+    <Files>
+      <File FileName="Assets/Scripts/CameraMover.cs" Line="8" Column="45" />
+      <File FileName="Assets/Scripts/CameraRotater.cs" Line="13" Column="53" />
+      <File FileName="Assets/Notes.txt" Line="52" Column="16" />
+      <File FileName="Assets/Character Models/Animations/FingerMover.cs" Line="339" Column="35" />
+      <File FileName="Assets/Scripts/Variables.cs" Line="728" Column="20" />
+      <File FileName="Assets/Scripts/SymbolButton.cs" Line="35" Column="37" />
+      <File FileName="Assets/Scripts/DictionaryController.cs" Line="22" Column="34" />
+      <File FileName="Assets/Scripts/SymbolGroup.cs" Line="69" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SLIPA" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Character Models" expanded="True">
+                <Node name="Animations" expanded="True">
+                  <Node name="HumanoidHandPoseHelper" expanded="True">
+                    <Node name="Editor" expanded="True" />
+                  </Node>
+                  <Node name="FingerMover.cs" selected="True" />
+                </Node>
+                <Node name="Martha and Shannon" expanded="True" />
+              </Node>
+              <Node name="Scripts" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1959d09a-c5ec-4389-ba05-f6e555c74743" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

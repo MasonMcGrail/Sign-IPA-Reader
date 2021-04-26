@@ -1,0 +1,56 @@
+Notes
+
+The following image is used for the chalkboard background.
+https://pixabay.com/photos/black-board-chalk-traces-school-1072366/
+
+The following image is adapted for use for the background for the UI.
+https://pixabay.com/illustrations/seamless-tileable-pattern-design-1855116/ 
+
+The following font is for text written in the transcription.
+It covers all relevant symbols fairly well except for accented ⟨ɨ⟩.
+https://www.1001fonts.com/lato-font.html
+
+    A number of settings can be specified in the material for the font,
+    then saved as a new font to be applied elsewhere
+
+At the end of the project, you can change the asset icons more systematically
+
+Allowing specification of dominant/non-dominant doesn't work well with cardinal
+directions, and it probably should be removed
+
+
+To Do
+
+* Visual change to symbol buttons when clicked / hovered over
+* Highlight the buttons that are not ASCII
+* There are no symbols for wiggling or any other kind of secondary articulation
+* The bent and so on handshapes are not currently configured correctly
+* Copy button text to clipboard
+
+To Do Much Later
+* The whole situation with fingers crossed and otherwise touching each other
+  is currently too much to deal with
+
+
+* Dictionary
+
+  * Needed Features
+    * Load dictionaries for particular languages, such as ASL or JSL
+
+  * Future Features
+    * Users can make their own dictionaries
+    * Words can be added to and deleted from dictionaries
+    * Dictionaries can be exported and loaded as their files, possibly JSON files
+
+
+Tests
+
+* WATCH would be good to demonstrate
+
+Immediate to-do
+
+* Add hints for certain motions, as the elbows right now are fucked up
+* Settings tab could be a help tab
+* The directions need to be represented with two letters
+* Display points for the the places
+* Possibly add more IK constraints
