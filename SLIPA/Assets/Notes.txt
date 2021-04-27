@@ -30,6 +30,7 @@ To Do
 To Do Much Later
 * The whole situation with fingers crossed and otherwise touching each other
   is currently too much to deal with
+* Localizing it to Japanese and other languages would be ideal
 
 
 * Dictionary
@@ -56,3 +57,4 @@ Immediate to-do
 * Possibly add more IK constraints
 * Document Handshape
 * Add check to make replaying an animation more efficient (same input or not)
+* Would be good to use raycasting for relative left/right of the body

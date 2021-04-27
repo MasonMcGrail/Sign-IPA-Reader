@@ -1,13 +1,9 @@
 ﻿<Properties StartupConfiguration="{D08E7D50-2AE1-1582-54C2-39CAB83F521A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Functionality/DictionaryController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Notes.txt">
     <Files>
-      <File FileName="Assets/Scripts/Functionality/FingerMover.cs" Line="423" Column="21" />
-      <File FileName="Assets/Notes.txt" Line="58" Column="78" />
-      <File FileName="Assets/Scripts/UI/TabGroup.cs" Line="47" Column="57" />
-      <File FileName="Assets/Scripts/Functionality/Variables.cs" Line="373" Column="52" />
-      <File FileName="Assets/Scripts/Functionality/SignIO.cs" Line="19" Column="59" />
-      <File FileName="Assets/Scripts/Functionality/Handshape.cs" Line="7" Column="34" />
-      <File FileName="Assets/Scripts/Functionality/DictionaryController.cs" Line="100" Column="2" />
+      <File FileName="Assets/Notes.txt" Line="33" Column="55" />
+      <File FileName="Assets/Scripts/Non-UI/AvatarAnimator.cs" Line="174" Column="1" />
+      <File FileName="Assets/Scripts/Non-UI/Variables.cs" Line="884" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,19 +11,13 @@
           <Node name="SLIPA" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Character Models" expanded="True">
-                <Node name="Animations" expanded="True">
-                  <Node name="HumanoidHandPoseHelper" expanded="True">
-                    <Node name="Editor" expanded="True" />
-                  </Node>
-                </Node>
+                <Node name="Animations" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Camera" expanded="True" />
-                <Node name="Functionality" expanded="True">
-                  <Node name="DictionaryController.cs" selected="True" />
-                </Node>
+                <Node name="Non-UI" expanded="True" />
                 <Node name="UI" expanded="True" />
               </Node>
+              <Node name="Notes.txt" selected="True" />
             </Node>
           </Node>
         </State>
@@ -36,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f484b85c-85d9-4fae-a4cc-5d3f314400bc" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e6092da0-8243-47aa-9ac8-9f556e431f9a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
