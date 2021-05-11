@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///   <para>This class controls sends the input that the user types to the
+///   <see cref="AvatarAnimator"/> to be evaluated.</para>
+/// </summary>
 public class SignIO : MonoBehaviour
 {
     private static TMPro.TMP_InputField inputField;
+    /// <summary>
+    ///   <para>This error message displays when the user enters malformed input.</para>
+    /// </summary>
     public TMPro.TextMeshProUGUI errorMessage;
     public string Text
     {
@@ -25,9 +32,12 @@ public class SignIO : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return)) { UpdateAvatar(); }
     }
 
+    /// <summary>
+    ///   <para>Attempts to update the avatar based on the user's input.
+    ///   If the user enters malformed input, an error message appears.</para>
+    /// </summary>
     public void UpdateAvatar()
     {
-        // the error message displays if the input text is invalid
         errorMessage.gameObject.SetActive(!fingerMover.ReadInput(Text));
     }
 }

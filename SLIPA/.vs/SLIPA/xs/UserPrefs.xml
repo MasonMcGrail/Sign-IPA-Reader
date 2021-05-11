@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{D08E7D50-2AE1-1582-54C2-39CAB83F521A}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Notes.txt">
     <Files>
-      <File FileName="Assets/Notes.txt" Line="33" Column="55" />
-      <File FileName="Assets/Scripts/Non-UI/AvatarAnimator.cs" Line="174" Column="1" />
-      <File FileName="Assets/Scripts/Non-UI/Variables.cs" Line="884" Column="31" />
+      <File FileName="Assets/Notes.txt" Line="64" Column="4" />
+      <File FileName="Assets/Scripts/Non-UI/AvatarAnimator.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/Non-UI/AAVariables.cs" Line="1020" Column="23" />
+      <File FileName="Assets/Scripts/Non-UI/SignIO.cs" Line="41" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e6092da0-8243-47aa-9ac8-9f556e431f9a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5c7dd679-8233-4a31-8835-ca8925064f17" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

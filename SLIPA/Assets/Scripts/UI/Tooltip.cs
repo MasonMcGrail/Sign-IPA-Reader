@@ -4,10 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+///   <para>The tooltip referenced by the <see cref="TooltipSystem"/>.</para>
+/// </summary>
 [ExecuteInEditMode]
 public class Tooltip : MonoBehaviour
 {
     public TextMeshProUGUI contentField;
+    // When the tooltip is hidden, this is disabled.
     public LayoutElement layoutElement;
     public int characterWrapLimit;
     public string Text
@@ -19,24 +23,4 @@ public class Tooltip : MonoBehaviour
             layoutElement.enabled = value.Length > characterWrapLimit;
         }
     }
-
-    //public RectTransform rectTransform;
-
-    //private void Awake()
-    //{
-    //    rectTransform = GetComponent<RectTransform>();
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    Vector2 position = Input.mousePosition;
-
-    //    float pivotX = position.x / Screen.width;
-    //    float pivotY = position.y / Screen.height;
-
-    //    rectTransform.pivot = new Vector2(pivotX, pivotY);
-
-    //    transform.position = position;
-    //}
 }

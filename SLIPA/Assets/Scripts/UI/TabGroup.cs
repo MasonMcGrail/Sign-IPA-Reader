@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// adapted from: https://www.youtube.com/watch?v=211t6r12XPQ
-
+/// <summary>
+///   <para>This class controls the <see cref="TabButton"/> objects that show and
+///   hide the different panels,</para>
+/// </summary>
+/// <remarks>
+///   <para>
+///     Adapted from https://www.youtube.com/watch?v=211t6r12XPQ.
+///   </para>
+/// </remarks>
 public class TabGroup : MonoBehaviour
 {
     public List<TabButton> tabButtons;

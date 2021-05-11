@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+///   <para>Objects of this class represent individual handshapes, and they store
+///   information that <see cref="AvatarAnimator"/> can use to animate.</para>
+/// </summary>
 public class Handshape : System.ICloneable
 {
     public enum Finger { Thumb, Index, Middle, Ring, Little }
@@ -13,11 +17,7 @@ public class Handshape : System.ICloneable
 
     private Dictionary<Finger, int> fingerIndexDict = new Dictionary<Finger, int>
     {
-        { Thumb,  0 },
-        { Index,  1 },
-        { Middle, 2 },
-        { Ring,   3 },
-        { Little, 4 }
+        { Thumb, 0 }, { Index, 1 }, { Middle, 2 }, { Ring, 3 }, { Little, 4 }
     };
 
     public float[,] FingerProperties { get; set; }

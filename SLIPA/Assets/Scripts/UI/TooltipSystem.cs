@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// adapted from: https://www.youtube.com/watch?v=HXFoUGw7eKk
-
+/// <summary>
+///   <para>A tooltip system that displays descriptions provided by the
+///   <see cref="SymbolGroup"/>.</para>
+/// </summary>
+/// <remarks>
+///   <para>
+///     Adapted from https://www.youtube.com/watch?v=HXFoUGw7eKk.
+///   </para>
+/// </remarks>
 public class TooltipSystem : MonoBehaviour
 {
     private static TooltipSystem current;
@@ -16,7 +23,6 @@ public class TooltipSystem : MonoBehaviour
 
     public static void Show(string content)
     {
-        //yield return new WaitForSeconds(1);
         current.tooltip.Text = content;
         current.tooltip.gameObject.SetActive(true);
     }

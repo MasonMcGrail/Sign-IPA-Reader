@@ -19,18 +19,33 @@ Allowing specification of dominant/non-dominant doesn't work well with cardinal
 directions, and it probably should be removed
 
 
-To Do
-
-* Visual change to symbol buttons when clicked / hovered over
-* Highlight the buttons that are not ASCII
-* There are no symbols for wiggling or any other kind of secondary articulation
-* The bent and so on handshapes are not currently configured correctly
-* Copy button text to clipboard
-
 To Do Much Later
 * The whole situation with fingers crossed and otherwise touching each other
   is currently too much to deal with
-* Localizing it to Japanese and other languages would be ideal
+* Localizing it to Japanese and other languages would be ideal. Some preliminary examples:
+
+    input assistance		入力支援
+    settings				設定
+    dictionary			    辞書
+    info					情報
+    "Hover over a letter to see its description;
+    click on it to copy it to your clipboard."
+    「特定の文字の説明を表示するには、カーソルを置きます
+    その文字をクリックするとクリップボードにコピーします。」
+    major places			主要な部位
+    minor places			他の部位
+    major movement		    主要な動き
+    rotational movement	    回転の動き*
+    accents				    区別符号*
+    import dictionary		辞書をインポート
+    export dictionary		辞書をエクスポート
+
+    "This is a tool for visually producing Sign IPA notation."
+    「これは視覚的に手話国際音声記号の表記を生産するツールです。」
+    "It makes it easy to understand how signs are produced based on their
+    phonetic spelling without having to look up each character in the Sign IPA documentation."
+    「それぞれの文字を手話国際音声記号のドキュメントに調べることなく、
+    発音記号から入力はどうやって行われるかわかりやすくなります。」
 
 
 * Dictionary
@@ -44,17 +59,23 @@ To Do Much Later
     * Dictionaries can be exported and loaded as their files, possibly JSON files
 
 
-Tests
+Notes
 
-* WATCH would be good to demonstrate
+* 今アと中狭は違う
 
 Immediate to-do
 
-* Add hints for certain motions, as the elbows right now are fucked up
-* Settings tab could be a help tab
+* Visual change to symbol buttons when clicked / hovered over
+* Highlight the buttons that are not ASCII
+* There are no symbols for wiggling or any other kind of secondary articulation
+* The bent and so on handshapes are not currently configured correctly
+* Add hints for certain motions, as the elbows right now are very off
 * The directions need to be represented with two letters
 * Display points for the places
 * Possibly add more IK constraints
-* Document Handshape
-* Add check to make replaying an animation more efficient (same input or not)
 * Would be good to use raycasting for relative left/right of the body
+* Might need to use schwa for movement between two places
+* Add visualization of what the symbols represent
+* The back doesn't bend to reach certain points
+* Give better feedback for when the input for a place is mostly good, but not all
+  mandatory symbols for that place have been supplied

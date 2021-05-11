@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+///   <para>This class acts as the controller for <see cref="SymbolButton"/> objects.</para>
+/// </summary>
 public class SymbolGroup : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_InputField inputField;
-    // Currently does nothing, but may be used later for additional functionality.
+    // Currently does nothing, but will be used later for additional functionality.
     List<SymbolButton> symbolButtons;
 
+    // Contains all of the descriptions for the tooltips for each description.
     public static Dictionary<string, string> symbolDescriptions;
     // Allows for text to be copied to the clipboard.
     private static TextEditor textEditor = new TextEditor();
-
+    // Allows for the focus to be moved to the end of the input field
+    // after a button is clicked.
     [SerializeField] private EventSystem eventSystem;
 
     void Start()
@@ -136,17 +141,6 @@ public class SymbolGroup : MonoBehaviour
             symbolButtons = new List<SymbolButton>();
         }
         symbolButtons.Add(button);
-    }
-
-    // will need for hover functiionality
-    public void OnSymbolEnter(SymbolButton button)
-    {
-        ////ResetTabs();
-        ////button.backgound.sprite = tabHover;
-        //if (symbolButtons == null || button != symbolButtons)
-        //{
-        //    //button.backgound.sprite = tabHover;
-        //}
     }
 
     /// <summary>

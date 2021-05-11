@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+///   <para>This class is used for the tabs that toggle the panels.</para>
+/// </summary>
 [RequireComponent(typeof(Image))]
 public class TabButton : MonoBehaviour, IPointerEnterHandler,
     IPointerClickHandler, IPointerExitHandler

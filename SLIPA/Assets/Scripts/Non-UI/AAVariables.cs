@@ -4,9 +4,9 @@ using System.Linq;
 using UnityEngine;
 
 /// <summary>
-///   <para>This class contains all of the variables in FingerMover that are
-///   static and read-only. Many of these are dictionaries which are manually
-///   instantied and thus take up a lot of space in a file.</para>
+///   <para>This class contains all of the variables in <see cref="AvatarAnimator"/>
+///   that are static and read-only. Many of these are dictionaries which are
+///   manually instantiated and thus take up a lot of space in a file.</para>
 /// </summary>
 public sealed class AAVariables
 {
@@ -129,7 +129,9 @@ public sealed class AAVariables
     /// <summary>
 	///   <para>A dictionary where its keys are symbols for places in Sign IPA
     ///   and their corresponding values are offets in position from the reference
-    ///   bones in <see cref="SymbolBoneDict"/>.</para>
+    ///   bones in <see cref="SymbolBoneDict"/>. The first <see cref="Vector3"/>
+    ///   is the offset for the target itself, and the second <see cref="Vector3"/>
+    ///   is the offset of the hint, if it exists.</para>
 	/// </summary>
     /// <remarks>
     ///   When Unity updates to C# 8.0, can be greatly simplified with the ??= operator.
@@ -365,15 +367,6 @@ public sealed class AAVariables
             }
         }
 
-        //Handshape.Finger[] last3 = { Handshape.Middle,
-        //    Handshape.Ring, Handshape.Little };
-        //for (int i = 0; i < last3.Length; i++)
-        //{
-        //    Handshape tempHandshape = dict["I"].Clone() as Handshape;
-        //    SwapFingers(tempHandshape, Handshape.Index, last3[i]);
-        //    dict["I" + (i + 3)] = tempHandshape;
-        //}
-
         return dict;
     }
 
@@ -412,66 +405,66 @@ public sealed class AAVariables
             // Finger symbols
                 // Left
                     // Left thumb
-                    { "ŋ1l", HumanBodyBones.LeftThumbDistal }, // further beyond distal
-                    { "k1l", HumanBodyBones.LeftThumbDistal }, // beyond distal
-                    { "g1l", HumanBodyBones.LeftThumbIntermediate }, // between distal and prox.
-                    { "x1l", HumanBodyBones.LeftThumbProximal }, // between prox. and intermediate
-                    { "ɣ1l", HumanBodyBones.LeftThumbProximal },
+                    { "1ŋl", HumanBodyBones.LeftThumbDistal }, // further beyond distal
+                    { "1kl", HumanBodyBones.LeftThumbDistal }, // beyond distal
+                    { "1gl", HumanBodyBones.LeftThumbIntermediate }, // between distal and prox.
+                    { "1xl", HumanBodyBones.LeftThumbProximal }, // between prox. and intermediate
+                    { "1ɣl", HumanBodyBones.LeftThumbProximal },
                     // Left index
-                    { "ŋ2l", HumanBodyBones.LeftIndexDistal }, // further beyond distal
-                    { "k2l", HumanBodyBones.LeftIndexDistal }, // beyond distal
-                    { "g2l", HumanBodyBones.LeftIndexIntermediate }, // between distal and prox.
-                    { "x2l", HumanBodyBones.LeftIndexProximal }, // between prox. and intermediate
-                    { "ɣ2l", HumanBodyBones.LeftIndexProximal },
+                    { "2ŋl", HumanBodyBones.LeftIndexDistal }, // further beyond distal
+                    { "2kl", HumanBodyBones.LeftIndexDistal }, // beyond distal
+                    { "2gl", HumanBodyBones.LeftIndexIntermediate }, // between distal and prox.
+                    { "2xl", HumanBodyBones.LeftIndexProximal }, // between prox. and intermediate
+                    { "2ɣl", HumanBodyBones.LeftIndexProximal },
                     // Left middle
-                    { "ŋ3l", HumanBodyBones.LeftMiddleDistal }, // further beyond distal
-                    { "k3l", HumanBodyBones.LeftMiddleDistal }, // beyond distal
-                    { "g3l", HumanBodyBones.LeftMiddleIntermediate }, // between distal and prox.
-                    { "x3l", HumanBodyBones.LeftMiddleProximal }, // between prox. and intermediate
-                    { "ɣ3l", HumanBodyBones.LeftMiddleProximal },
+                    { "3ŋl", HumanBodyBones.LeftMiddleDistal }, // further beyond distal
+                    { "3kl", HumanBodyBones.LeftMiddleDistal }, // beyond distal
+                    { "3gl", HumanBodyBones.LeftMiddleIntermediate }, // between distal and prox.
+                    { "3xl", HumanBodyBones.LeftMiddleProximal }, // between prox. and intermediate
+                    { "3ɣl", HumanBodyBones.LeftMiddleProximal },
                     // Left ring
-                    { "ŋ4l", HumanBodyBones.LeftRingDistal }, // further beyond distal
-                    { "k4l", HumanBodyBones.LeftRingDistal }, // beyond distal
-                    { "g4l", HumanBodyBones.LeftRingIntermediate }, // between distal and prox.
-                    { "x4l", HumanBodyBones.LeftRingProximal }, // between prox. and intermediate
-                    { "ɣ4l", HumanBodyBones.LeftRingProximal },
+                    { "4ŋl", HumanBodyBones.LeftRingDistal }, // further beyond distal
+                    { "4kl", HumanBodyBones.LeftRingDistal }, // beyond distal
+                    { "4gl", HumanBodyBones.LeftRingIntermediate }, // between distal and prox.
+                    { "4xl", HumanBodyBones.LeftRingProximal }, // between prox. and intermediate
+                    { "4ɣl", HumanBodyBones.LeftRingProximal },
                     // Left little
-                    { "ŋ5l", HumanBodyBones.LeftLittleDistal }, // further beyond distal
-                    { "k5l", HumanBodyBones.LeftLittleDistal }, // beyond distal
-                    { "g5l", HumanBodyBones.LeftLittleIntermediate }, // between distal and prox.
-                    { "x5l", HumanBodyBones.LeftLittleProximal }, // between prox. and intermediate
-                    { "ɣ5l", HumanBodyBones.LeftLittleProximal },
+                    { "5ŋl", HumanBodyBones.LeftLittleDistal }, // further beyond distal
+                    { "5kl", HumanBodyBones.LeftLittleDistal }, // beyond distal
+                    { "5gl", HumanBodyBones.LeftLittleIntermediate }, // between distal and prox.
+                    { "5xl", HumanBodyBones.LeftLittleProximal }, // between prox. and intermediate
+                    { "5ɣl", HumanBodyBones.LeftLittleProximal },
                 // Right
                     // Right thumb
-                    { "ŋ1r", HumanBodyBones.RightThumbDistal }, // further beyond distal
-                    { "k1r", HumanBodyBones.RightThumbDistal }, // beyond distal
-                    { "g1r", HumanBodyBones.RightThumbIntermediate }, // between distal and prox.
-                    { "x1r", HumanBodyBones.RightThumbProximal }, // between prox. and intermediate
-                    { "ɣ1r", HumanBodyBones.RightThumbProximal },
+                    { "1ŋr", HumanBodyBones.RightThumbDistal }, // further beyond distal
+                    { "1kr", HumanBodyBones.RightThumbDistal }, // beyond distal
+                    { "1gr", HumanBodyBones.RightThumbIntermediate }, // between distal and prox.
+                    { "1xr", HumanBodyBones.RightThumbProximal }, // between prox. and intermediate
+                    { "1ɣr", HumanBodyBones.RightThumbProximal },
                     // Right index
-                    { "ŋ2r", HumanBodyBones.RightIndexDistal }, // further beyond distal
-                    { "k2r", HumanBodyBones.RightIndexDistal }, // beyond distal
-                    { "g2r", HumanBodyBones.RightIndexIntermediate }, // between distal and prox.
-                    { "x2r", HumanBodyBones.RightIndexProximal }, // between prox. and intermediate
-                    { "ɣ2r", HumanBodyBones.RightIndexProximal },
+                    { "2ŋr", HumanBodyBones.RightIndexDistal }, // further beyond distal
+                    { "2kr", HumanBodyBones.RightIndexDistal }, // beyond distal
+                    { "2gr", HumanBodyBones.RightIndexIntermediate }, // between distal and prox.
+                    { "2xr", HumanBodyBones.RightIndexProximal }, // between prox. and intermediate
+                    { "2ɣr", HumanBodyBones.RightIndexProximal },
                     // Right middle
-                    { "ŋ3r", HumanBodyBones.RightMiddleDistal }, // further beyond distal
-                    { "k3r", HumanBodyBones.RightMiddleDistal }, // beyond distal
-                    { "g3r", HumanBodyBones.RightMiddleIntermediate }, // between distal and prox.
-                    { "x3r", HumanBodyBones.RightMiddleProximal }, // between prox. and intermediate
-                    { "ɣ3r", HumanBodyBones.RightMiddleProximal },
+                    { "3ŋr", HumanBodyBones.RightMiddleDistal }, // further beyond distal
+                    { "3kr", HumanBodyBones.RightMiddleDistal }, // beyond distal
+                    { "3gr", HumanBodyBones.RightMiddleIntermediate }, // between distal and prox.
+                    { "3xr", HumanBodyBones.RightMiddleProximal }, // between prox. and intermediate
+                    { "3ɣr", HumanBodyBones.RightMiddleProximal },
                     // Right ring
-                    { "ŋ4r", HumanBodyBones.RightRingDistal }, // further beyond distal
-                    { "k4r", HumanBodyBones.RightRingDistal }, // beyond distal
-                    { "g4r", HumanBodyBones.RightRingIntermediate }, // between distal and prox.
-                    { "x4r", HumanBodyBones.RightRingProximal }, // between prox. and intermediate
-                    { "ɣ4r", HumanBodyBones.RightRingProximal },
+                    { "4ŋr", HumanBodyBones.RightRingDistal }, // further beyond distal
+                    { "4kr", HumanBodyBones.RightRingDistal }, // beyond distal
+                    { "4gr", HumanBodyBones.RightRingIntermediate }, // between distal and prox.
+                    { "4xr", HumanBodyBones.RightRingProximal }, // between prox. and intermediate
+                    { "4ɣr", HumanBodyBones.RightRingProximal },
                     // Right little
-                    { "ŋ5r", HumanBodyBones.RightLittleDistal }, // further beyond distal
-                    { "k5r", HumanBodyBones.RightLittleDistal }, // beyond distal
-                    { "g5r", HumanBodyBones.RightLittleIntermediate }, // between distal and prox.
-                    { "x5r", HumanBodyBones.RightLittleProximal }, // between prox. and intermediate
-                    { "ɣ5r", HumanBodyBones.RightLittleProximal },
+                    { "5ŋr", HumanBodyBones.RightLittleDistal }, // further beyond distal
+                    { "5kr", HumanBodyBones.RightLittleDistal }, // beyond distal
+                    { "5gr", HumanBodyBones.RightLittleIntermediate }, // between distal and prox.
+                    { "5xr", HumanBodyBones.RightLittleProximal }, // between prox. and intermediate
+                    { "5ɣr", HumanBodyBones.RightLittleProximal },
             // Foot/leg symbols
                 // Left
                 { "ɴl", HumanBodyBones.Hips },
@@ -511,8 +504,13 @@ public sealed class AAVariables
         // The dictionary is initialized to contain only the left versions of
         // places; the right versions of those are added later.
 
-        // This exists while some of the places' positions are incomplete.
-        (Vector3, Vector3?) incompletePosition = (Vector3.zero, null);
+        // Some of the values are most easily defined as the midpoints between
+        // two othe bones. Those are handled by AvatarAnimator's
+        // GetPositionOfPlace() method.
+        (Vector3, Vector3?) definedAsMidpoint = (Vector3.zero, null);
+        // This is used to differentiate between places defined as midpoints
+        // and those with no offset.
+        (Vector3, Vector3?) noOffset = (Vector3.zero, null);
         Dictionary<string, (Vector3, Vector3?)> dict = new Dictionary<string, (Vector3, Vector3?)>
         {
             // Head symbols
@@ -529,53 +527,53 @@ public sealed class AAVariables
             { "z", (new Vector3(0f, -0.04f, 0.16f), null) },
             // Arm symbols
             { "ɲl", (new Vector3(0f, 0.09f, 0f), null) },
-            { "cl", incompletePosition }, // between upper and lower
+            { "cl", definedAsMidpoint }, // between upper and lower
             { "ɟl", (new Vector3(0f, -0.04f, -0.04f), null) },
-            { "ʃl", incompletePosition }, // between lower and hand
-            { "ʒl", incompletePosition },
+            { "ʃl", definedAsMidpoint }, // between lower and hand
+            { "ʒl", noOffset },
             // Finger symbols
                 // Left thumb
-                { "ŋ1l", incompletePosition }, // further beyond distal
-                { "k1l", incompletePosition }, // beyond distal
-                { "g1l", incompletePosition }, // between distal and prox.
-                { "x1l", incompletePosition }, // between prox. and intermediate
-                { "ɣ1l", incompletePosition },
+                { "1ŋl", definedAsMidpoint }, // further beyond distal
+                { "1kl", definedAsMidpoint }, // beyond distal
+                { "1gl", definedAsMidpoint }, // between distal and prox.
+                { "1xl", definedAsMidpoint }, // between prox. and intermediate
+                { "1ɣl", noOffset },
                 // Left index
-                { "ŋ2l", incompletePosition }, // further beyond distal
-                { "k2l", incompletePosition }, // beyond distal
-                { "g2l", incompletePosition }, // between distal and prox.
-                { "x2l", incompletePosition }, // between prox. and intermediate
-                { "ɣ2l", incompletePosition },
+                { "2ŋl", definedAsMidpoint }, // further beyond distal
+                { "2kl", definedAsMidpoint }, // beyond distal
+                { "2gl", definedAsMidpoint }, // between distal and prox.
+                { "2xl", definedAsMidpoint }, // between prox. and intermediate
+                { "2ɣl", noOffset },
                 // Left middle
-                { "ŋ3l", incompletePosition }, // further beyond distal
-                { "k3l", incompletePosition }, // beyond distal
-                { "g3l", incompletePosition }, // between distal and prox.
-                { "x3l", incompletePosition }, // between prox. and intermediate
-                { "ɣ3l", incompletePosition },
+                { "3ŋl", definedAsMidpoint }, // further beyond distal
+                { "3kl", definedAsMidpoint }, // beyond distal
+                { "3gl", definedAsMidpoint }, // between distal and prox.
+                { "3xl", definedAsMidpoint }, // between prox. and intermediate
+                { "3ɣl", noOffset },
                 // Left ring
-                { "ŋ4l", incompletePosition }, // further beyond distal
-                { "k4l", incompletePosition }, // beyond distal
-                { "g4l", incompletePosition }, // between distal and prox.
-                { "x4l", incompletePosition }, // between prox. and intermediate
-                { "ɣ4l", incompletePosition },
+                { "4ŋl", definedAsMidpoint }, // further beyond distal
+                { "4kl", definedAsMidpoint }, // beyond distal
+                { "4gl", definedAsMidpoint }, // between distal and prox.
+                { "4xl", definedAsMidpoint }, // between prox. and intermediate
+                { "4ɣl", noOffset },
                 // Left little
-                { "ŋ5l", incompletePosition }, // further beyond distal
-                { "k5l", incompletePosition }, // beyond distal
-                { "g5l", incompletePosition }, // between distal and prox.
-                { "x5l", incompletePosition }, // between prox. and intermediate
-                { "ɣ5l", incompletePosition },
+                { "5ŋl", definedAsMidpoint }, // further beyond distal
+                { "5kl", definedAsMidpoint }, // beyond distal
+                { "5gl", definedAsMidpoint }, // between distal and prox.
+                { "5xl", definedAsMidpoint }, // between prox. and intermediate
+                { "5ɣl", noOffset },
             // Foot/leg symbols
             { "ɴl", (new Vector3(-0.09f, 0f, 0.14f), null) },
-            { "ql", incompletePosition }, // between upper and lower
+            { "ql", definedAsMidpoint }, // between upper and lower
             { "ɢl", (new Vector3(0f, 0f, 0.08f), null) },
-            { "χl", incompletePosition }, // between lower and foot
+            { "χl", definedAsMidpoint }, // between lower and foot
             { "ʁl", (new Vector3(0f, 0.07f, 0f), null) },
             // Minor place symbols
             { "θl", (new Vector3(-0.1f, 0.08f, 0f), null) },
-            { "ðl", incompletePosition },
-            { "ɾl", incompletePosition },
-            { "ʔ", incompletePosition }, //below the hips
-            { "h", incompletePosition }, //below the hips
+            { "ðl", (new Vector3(-0.1f, 0.02f, 0f), null) },
+            { "ɾl", definedAsMidpoint },
+            { "ʔ", (new Vector3(0f, 0f, 0.15f), null) }, //below the hips
+            { "h", (new Vector3(0f, -0.1f, 0.15f), null) }, //below the hips
             // Neutral space
             { "0", (new Vector3(0f, 0f, 0.35f), null) },
             { "0l", (new Vector3(-0.15f, -0.15f, 0.35f), null) }
@@ -620,7 +618,7 @@ public sealed class AAVariables
     private static string InitRegexPattern()
     {
         // A list of all acceptable patterns for Sign IPA input.
-        List<string> acceptable = new List<string>();
+        List<string> acceptablePatterns = new List<string>();
         string basicHeadPlaces = @"[mpbfv]";
         string basicUnpairedPlaces = @"[ntdszʔh]";
         string basicPairedPlaces = @"[ɲcɟʃʒɴqɢχʁθðɾ]";
@@ -629,13 +627,14 @@ public sealed class AAVariables
         // The accented non-ASCII characters have to be dealt with separately
         // because they are each encoded as two separate characters.
         // The combining  characters are between square brackets after [ɛɨəɔ],
-        // but they may not be visible because they are combining the left bracket.
+        // but they may not be visible because they are combining with the left bracket.
         string basicDirectionsAndMovements =
             @"([ieɛɨəauoɔ][˦˧˨]?|[íéɨ́ə́áúóɔ́ìèɛ̀ɨ̀ə̀àùòɔ̀īēɛ̄ɨ̄ə̄āūōɔ̄]|[ɛɨəɔ][́̀̄])";
-        
+
         string basicOpenHandshapes = @"[AIUYEO]";
         string basicOtherHandshapes = @"[PBFWTDSLKGXJ]";
         string handshapeMods = @"[NQZMCV]";
+        //// Symbols for rotations, which have not yet been implemented.
         //string rotations = "[yɯøɤœʌ]";
 
         // Head places can have a single relative side marker.
@@ -647,44 +646,42 @@ public sealed class AAVariables
         string pairedPlaces = basicPairedPlaces + sides + relSides + @"?";
         // Finger places are obligatorily specified for finger and absolute side,
         // and they can optionally be marked for relative side.
-        string fingerPlaces = basicFingerPlaces + fingerNumbers + sides + relSides + @"?";
+        string fingerPlaces = fingerNumbers + basicFingerPlaces + sides + relSides + @"?";
         // A place can be any of the aforementioned kinds of places
         // with the opposite side being optionally marked.
         string place = @"(?<place>(" + headPlaces + @"|" + unpairedPlaces + @"|"
             + pairedPlaces + @"|" + fingerPlaces + @")" + otherSide + @"?)";
 
-        // When only the direction is supplied, the hand doesn't move.
-        string directionOnly = @"(" + basicDirectionsAndMovements + @",)";
         // If direction is unspecified, the hand is facing a default direction.
-        string movement = @"((?<facing>" + basicDirectionsAndMovements + @")?,(?<movement>"
-            + basicDirectionsAndMovements + @"))";
+        string movement = @"(?<movement>" + basicDirectionsAndMovements + @")";
 
         // Open handshapes can take any basic handshape modifiers.
         string openHandshapes = basicOpenHandshapes + handshapeMods + @"?";
         // Other handshapes can only take modifiers for bending.
         string otherHandshapes = basicOtherHandshapes + @"[MCV]?";
         // A handshape can either be open or not open.
-        string handshape = @"(?<handshape>" + openHandshapes + @"|" + otherHandshapes + @")";
+        string handshape = @"(?<handshape>(" + openHandshapes + @"|" + otherHandshapes
+            + @"))(?<facing>" + basicDirectionsAndMovements + @")?";
 
         //// A maximally PMP sign, allowing for PMP, PM, MP, M, or P.
         //// Currently doesn't consider secondary articulation considerations.
         //string maxPMPsign = @"(" + place + @"?" + movement + @"?" + place + @"?|" + place + @")";
 
         // A sign with an initial P, which may be followed by a P, an M, or nothing.
-        string tempSign = @"(" + place + @"(" + place + @"|" + movement + @")?)";
+        string tempSign = @"(" + place + @"(ə" + place + @"|" + movement + @")?)";
 
         // An optional handshape plus a maximally PMP sign.
-        acceptable.Add(handshape + @"?" + tempSign);
+        acceptablePatterns.Add(handshape + @"?" + tempSign);
         // A handshape plus an an optional maximally PMP sign or direction.
-        acceptable.Add(handshape + @"(" + tempSign + @"|" + directionOnly + @")?");
+        acceptablePatterns.Add(handshape + @"(" + tempSign + @"|" + movement + @")?");
 
         // Separate all of the the acceptable inputs by '|' and places
         // '^' and '$' at the beginning and end of the pattern, respectively.
         System.Text.StringBuilder pattern = new System.Text.StringBuilder(@"^(");
-        for (int i = 0; i < acceptable.Count; i++)
+        for (int i = 0; i < acceptablePatterns.Count; i++)
         {
             if (i != 0) { pattern.Append(@"|"); }
-            pattern.Append(acceptable[i]);
+            pattern.Append(acceptablePatterns[i]);
         }
         pattern.Append(@")$");
         return pattern.ToString();
@@ -898,21 +895,21 @@ public sealed class AAVariables
     /// </remarks>
     public static Quaternion Rotation(string facing)
     {
-        Quaternion rotation, undecided = Quaternion.Euler(0f, 0f, 0f);
+        Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
         switch (facing)
         {
             case "í":
             case "i˦":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-135f, 0f, -45f);
                 break;
             case "i":
             case "ī":
             case "i˧":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-90f, 0f, -45f);
                 break;
             case "ì":
             case "i˨":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-45f, 0f, -45f);
                 break;
 
             case "é":
@@ -931,21 +928,21 @@ public sealed class AAVariables
 
             case "ɛ́":
             case "ɛ˦":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-135f, 0f, 45f);
                 break;
             case "ɛ":
             case "ɛ̄":
             case "ɛ˧":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-90f, 0f, 45f);
                 break;
             case "ɛ̀":
             case "ɛ˨":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-45f, 0f, 45f);
                 break;
 
             case "ɨ́":
             case "ɨ˦":
-                rotation = Quaternion.Euler(-90f, 0f, -135f);
+                rotation = Quaternion.Euler(-90f, 45f, -90f);
                 break;
             case "ɨ":
             case "ɨ̄":
@@ -954,7 +951,7 @@ public sealed class AAVariables
                 break;
             case "ɨ̀":
             case "ɨ˨":
-                rotation = Quaternion.Euler(-90f, 0f, -45f);
+                rotation = Quaternion.Euler(-90f, -45f, -90f);
                 break;
 
             case "ə́":
@@ -968,7 +965,7 @@ public sealed class AAVariables
 
             case "á":
             case "a˦":
-                rotation = Quaternion.Euler(-90f, 0f, 135f);
+                rotation = Quaternion.Euler(-90f, 45f, 90f);
                 break;
             case "a":
             case "ā":
@@ -977,21 +974,21 @@ public sealed class AAVariables
                 break;
             case "à":
             case "a˨":
-                rotation = Quaternion.Euler(-90f, 0f, 45f);
+                rotation = Quaternion.Euler(-90f, -45f, 90f);
                 break;
 
             case "ú":
             case "u˦":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-135f, 0f, -135f);
                 break;
             case "u":
             case "ū":
             case "u˧":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-90f, 0f, -135f);
                 break;
             case "ù":
             case "u˨":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-45f, 0f, -135f);
                 break;
 
             case "ó":
@@ -1010,20 +1007,16 @@ public sealed class AAVariables
 
             case "ɔ́":
             case "ɔ˦":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-135f, 0f, 135f);
                 break;
             case "ɔ":
             case "ɔ̄":
             case "ɔ˧":
-                rotation = undecided;
+                rotation = Quaternion.Euler(-90f, 0f, 135f);
                 break;
             case "ɔ̀":
             case "ɔ˨":
-                rotation = undecided;
-                break;
-
-            default:
-                rotation = undecided;
+                rotation = Quaternion.Euler(-45f, 0f, 135f);
                 break;
         }
         return rotation;

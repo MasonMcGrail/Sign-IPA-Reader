@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine.Animations.Rigging;
 using System.Text.RegularExpressions;
-//using System.Linq;
 
 /// <summary>
 ///   <para>This class does the bulk of the work in this project. User input is read
@@ -106,8 +105,16 @@ public class AvatarAnimator : MonoBehaviour
     ///   <see langword="true"/> if the input is valid, <see langword="false"/> otherwise.
     /// </returns>
 	/// <param name="input">The input from the text field.</param>
+    /// <remarks>
+    ///   <see cref="handshape"/>, <see cref="facing"/>, and <see cref="movement"/>
+    ///   will later have to be formatted like <see cref="places"/> when input
+    ///   containing more than one handshape, orientation, or movement is supported.
+    /// </remarks>
     public bool ReadInput(string input)
     {
+        // There are issues with the accented non-ASCII characters, so their
+        // accents are replaced with their corresponding tone bars.
+        input = input.Replace("́", "˦").Replace("̄", "˧").Replace("̀", "˨");
         Match match = Regex.Match(input, AAVariables.RegexPattern);
         GroupCollection groups = match.Groups;
         // The count is 1 only when the input is invalid.
@@ -127,24 +134,14 @@ public class AvatarAnimator : MonoBehaviour
                 places[i] = captures[i].ToString();
             }
         }
-        string placesStr = "\"\"";
-        if (places != null)
-        {
-            placesStr = "";
-            for (int i = 0; i < places.Length; i++)
-            {
-                if (i != 0) { placesStr += ","; }
-                placesStr += "\"" + places[i] + "\"";
-            }
-        }
         // Set facing equal to the facing that is part of the input if it exists,
         // or an empty string otherwise.
         facing = groups["facing"].Success ? groups["facing"].ToString() : string.Empty;
         // Set movement equal to the facing that is part of the input if it exists,
         // or an empty string otherwise.
         movement = groups["movement"].Success ? groups["movement"].ToString() : string.Empty;
-        Debug.Log("handshape: \"" + handshape + "\", places: [" + placesStr +
-            "], facing: \"" + facing + "\", movement: \"" + movement + "\"");
+
+        //PrintInput();
 
         // Note that on this computer, the program runs at roughly 80 fps
         // Currently updates both the left and right handshapes
@@ -155,7 +152,7 @@ public class AvatarAnimator : MonoBehaviour
         }
         else
         {
-            Debug.Log("Key does not exist in Handshape dictionary.");
+            Debug.Log("Key \"" + handshape + "\"does not exist in Handshape dictionary.");
         }
 
         // If the user's input is the same as the last successful input entered,
@@ -175,6 +172,26 @@ public class AvatarAnimator : MonoBehaviour
     }
 
     /// <summary>
+    ///   <para>An auxiliary function that prints out the user's input, which
+    ///   has been segmented by the regular expression.</para>
+    /// </summary>
+    private void PrintInput()
+    {
+        string placesStr = "\"\"";
+        if (places != null)
+        {
+            placesStr = "";
+            for (int i = 0; i < places.Length; i++)
+            {
+                if (i != 0) { placesStr += ","; }
+                placesStr += "\"" + places[i] + "\"";
+            }
+        }
+        Debug.Log("handshape: \"" + handshape + "\", places: [" + placesStr +
+            "], facing: \"" + facing + "\", movement: \"" + movement + "\"");
+    }
+
+    /// <summary>
 	///   <para>Updates the values in <see cref="placeValueDict"/> to match a particular handshape.</para>
 	/// </summary>
 	/// <param name="hs">The <see cref="Handshape"/> used to update.</param>
@@ -191,11 +208,11 @@ public class AvatarAnimator : MonoBehaviour
         }
     }
 
-    // ** Currently unusued.
+    // ** Currently unused.
     [SerializeField] private TwoBoneIKConstraint leftHandConstraint;
     // The IK target for the left hand.
     [SerializeField] private Transform leftHandTarget;
-    // ** Currently unusued.
+    // ** Currently unused.
     [SerializeField] private TwoBoneIKConstraint rightHandConstraint;
     // The IK target for the right hand.
     [SerializeField] private Transform rightHandTarget;
@@ -397,15 +414,6 @@ public class AvatarAnimator : MonoBehaviour
 
     private Vector3 GetPositionOfPlace(string p)
     {
-        /*
-        // Finger symbols
-            // Left thumb
-            { "ŋ1l", incompletePosition }, // further beyond distal
-            { "k1l", incompletePosition }, // beyond distal
-            { "g1l", incompletePosition }, // between distal and prox.
-            { "x1l", incompletePosition }, // between prox. and intermediate
-            { "ɣ1l", incompletePosition },
-        */
         string place = p.Substring(0, 1), side = p.Substring(p.Length - 1, 1);
         string fingerNumber = side == "l" || side == "r" ? p.Substring(1, 1) : string.Empty;
         //HumanBodyBones[] fingerBones = { HumanBodyBones.LeftIndexDistal };
@@ -415,14 +423,17 @@ public class AvatarAnimator : MonoBehaviour
                 return GetMidpointPlace("ɲ" + side, "ɟ" + side);
             case "ʃ":
                 return GetMidpointPlace("ɟ" + side, "ʒ" + side);
-            case "q":
-                return GetMidpointPlace("ɴ" + side, "ɢ" + side);
-            case "χ":
-                return GetMidpointPlace("ɢ" + side, "ʁ" + side);
             case "g":
                 return GetMidpointPlace("k" + fingerNumber + side, "g" + fingerNumber + side);
             case "x":
                 return GetMidpointPlace("g" + fingerNumber + side, "x" + fingerNumber + side);
+            case "q":
+                return GetMidpointPlace("ɴ" + side, "ɢ" + side);
+            case "χ":
+                return GetMidpointPlace("ɢ" + side, "ʁ" + side);
+            case "ɾ":
+                // Between wrist and base of middle finger
+                return GetMidpointPlace("ʒ" + side, "3g" + side);
             default:
                 return animator.GetBoneTransform(AAVariables.SymbolBoneDict[p]).position +
                     AAVariables.PlaceValueOffsets[p].Item1;

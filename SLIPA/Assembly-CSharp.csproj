@@ -67,7 +67,6 @@
     <Compile Include="Assets/Scripts/UI/TabButton.cs" />
     <Compile Include="Assets/Scripts/Non-UI/AvatarAnimator.cs" />
     <Compile Include="Assets/Scripts/UI/SymbolGroup.cs" />
-    <Compile Include="Assets/Scripts/UI/CameraMover.cs" />
     <Compile Include="Assets/Unity/ConstraintSamples/Scripts/mParent.cs" />
     <Compile Include="Assets/Scripts/Non-UI/DictionaryController.cs" />
     <Compile Include="Assets/Scripts/Non-UI/SignIO.cs" />

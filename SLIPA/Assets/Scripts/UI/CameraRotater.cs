@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+///   <para>Allows the user to rotate the camera around the avatar
+///   by clicking and dragging.</para>
+/// </summary>
 public class CameraRotater : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public float speed;
@@ -26,6 +30,9 @@ public class CameraRotater : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
+    /// <summary>
+    ///   <para>Changes the camera's transform to match its default.</para>
+    /// </summary>
     public void ResetCamera()
     {
         target.transform.eulerAngles = defaultOrientation;
